@@ -9,15 +9,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#f3ead9;
-    --cream-2:#ece0c9;
-    --ink:#211a14;
-    --rust:#c8501f;
-    --rust-dark:#a13a12;
-    --mustard:#e2a531;
-    --teal:#1f5c57;
-    --teal-dark:#123f3b;
-    --maroon:#7d2a2a;
+    --cream:#f7ede2;
+    --cream-2:#f0ddd6;
+    --ink:#2b1f24;
+    --rust:#7a9179;
+    --rust-dark:#566855;
+    --mustard:#dba642;
+    --teal:#7a9179;
+    --teal-dark:#5b7c99;
+    --maroon:#8c3a54;
     --paper-shadow: 6px 6px 0 var(--ink);
     --paper-shadow-sm: 4px 4px 0 var(--ink);
   }
@@ -27,7 +27,7 @@
     margin:0;
     background-color:var(--cream);
     background-image:
-      radial-gradient(circle, rgba(33,26,20,0.08) 1.2px, transparent 1.2px);
+      radial-gradient(circle, rgba(43,31,36,0.08) 1.2px, transparent 1.2px);
     background-size: 18px 18px;
     color:var(--ink);
     font-family:'Space Mono', monospace;
@@ -150,11 +150,19 @@
     padding:20px;
     min-height:180px;
   }
+  .photo-box:has(img){padding:0;}
+  .photo-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border:0;
+  }
   .photo-box .tape{
     position:absolute;
     width:70px;height:22px;
-    background:rgba(226,165,49,0.75);
-    border:1px solid rgba(33,26,20,0.2);
+    background:rgba(219,166,66,0.75);
+    border:1px solid rgba(43,31,36,0.2);
     top:-12px;left:50%;
     transform:translateX(-50%) rotate(-4deg);
   }
@@ -219,7 +227,7 @@
   .about-list{list-style:none;margin:24px 0 0;padding:0;}
   .about-list li{
     padding:10px 0 10px 32px;
-    border-bottom:1.5px dashed rgba(33,26,20,0.3);
+    border-bottom:1.5px dashed rgba(43,31,36,0.3);
     position:relative;
   }
   .about-list li::before{
@@ -411,8 +419,8 @@
       <p class="tagline">I translate complicated systems into wins clients actually feel.</p>
       <p class="hero-copy">
         Systems Engineer turned relationship-builder. Two years owning an enterprise
-        SaaS platform for 4,500+ employees taught me that the hardest part of tech
-        isn't the code — it's making sure the humans on the other end of it succeed.
+        SaaS platform for 4,500+ employees taught me that tech solutions should 
+        always center around making sure the humans on the other end of it succeed.
         Now looking to bring that same platform ownership, training, and
         problem-solving energy to a Technical Account Manager seat.
       </p>
@@ -422,8 +430,8 @@
       </div>
     </div>
     <div class="polaroid">
-      <div class="photo-box">+ Add Headshot Photo</div>
-      <figcaption>Leeya, probably mid-demo</figcaption>
+      <div class="photo-box"><img src="images/hs-4.png"></div>
+      <figcaption></figcaption>
     </div>
   </div>
 </header>
@@ -435,9 +443,9 @@
       <h2 class="section-title">From building the platform to being the person clients trust with it</h2>
       <p>
         I spent the last two years as the sole US-based engineer responsible for
-        Delta's enterprise workforce platform — which meant I wasn't just shipping
+        Delta's enterprise workforce platform which meant my responsiblities spanned beyond just shipping
         features. I was the escalation point, the trainer, the documentation writer,
-        and the calm voice on a 2am on-call page. That's the job of a Technical
+        and the calm voice on a Saturday morning on-call page. That's the job of a Technical
         Account Manager, I just had a different title for it.
       </p>
     </div>
@@ -532,21 +540,20 @@
     <h2 class="section-title">Web design, on the side</h2>
     <p style="max-width:640px;margin-bottom:36px;">
       Alongside my full-time role, I design and build websites for small
-      businesses and clients — a great excuse to keep my design instincts sharp.
-      Swap these placeholders with screenshots and details from your favorite projects.
+      businesses and clients. It's been a great way to keep my design instincts sharp.
     </p>
 
     <div class="project-grid">
       <div class="project-card">
-        <div class="photo-box"><div class="tape"></div>+ Add Project Screenshot</div>
+        <div class="photo-box"><div class="tape"></div><img src="images/cb-site.png" alt="Project screenshot"></div>
         <div class="pc-body">
-          <h3>Project Name</h3>
-          <p>One or two sentences on the client, the problem, and what you delivered.</p>
+          <h3>Photography Portfolio</h3>
+          <p>This client needed a way to display and promote their photography work. I delivered.</p>
         </div>
         <div class="project-tags"><span>Web Design</span><span>React</span><span>Branding</span></div>
       </div>
       <div class="project-card">
-        <div class="photo-box"><div class="tape"></div>+ Add Project Screenshot</div>
+        <div class="photo-box"><div class="tape"></div><img src="images/wbh-site.png"></div>
         <div class="pc-body">
           <h3>Project Name</h3>
           <p>One or two sentences on the client, the problem, and what you delivered.</p>
@@ -601,7 +608,7 @@
       Reach out — I read every message.
     </p>
     <div class="contact-links">
-      <a class="btn" href="mailto:leeyathercy1@gmail.com">Email Me</a>
+      <a class="btn" id="emailBtn" href="mailto:leeyathercy1@gmail.com">Email Me</a>
       <a class="btn secondary" href="https://linkedin.com/in/leeyathercy" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn secondary" href="https://leeyat1.github.io/My-Portfolio/" target="_blank" rel="noopener">Old Portfolio</a>
     </div>
@@ -618,6 +625,22 @@
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => links.classList.toggle('open'));
   links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Fallback for visitors with no default mail app configured:
+  // copy the address to clipboard so the message isn't lost even if
+  // the mailto: handoff doesn't open a compose window.
+  const emailBtn = document.getElementById('emailBtn');
+  if (emailBtn) {
+    emailBtn.addEventListener('click', () => {
+      const address = 'leeyathercy1@gmail.com';
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(address).catch(() => {});
+      }
+      const original = emailBtn.textContent;
+      emailBtn.textContent = 'Copied ' + address;
+      setTimeout(() => { emailBtn.textContent = original; }, 2500);
+    });
+  }
 </script>
 
 </body>
