@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leeya Thercy — Technical Account Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f3ead9;
+    --cream-2:#ece0c9;
+    --ink:#211a14;
+    --rust:#c8501f;
+    --rust-dark:#a13a12;
+    --mustard:#e2a531;
+    --teal:#1f5c57;
+    --teal-dark:#123f3b;
+    --maroon:#7d2a2a;
+    --paper-shadow: 6px 6px 0 var(--ink);
+    --paper-shadow-sm: 4px 4px 0 var(--ink);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background-color:var(--cream);
+    background-image:
+      radial-gradient(circle, rgba(33,26,20,0.08) 1.2px, transparent 1.2px);
+    background-size: 18px 18px;
+    color:var(--ink);
+    font-family:'Space Mono', monospace;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    margin:0;
+    line-height:1.05;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--cream);
+    border-bottom:3px solid var(--ink);
+  }
+  nav .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 24px;
+  }
+  .logo{
+    font-family:'Fraunces', serif;
+    font-weight:900;
+    font-size:1.3rem;
+    letter-spacing:0.5px;
+    background:var(--rust);
+    color:var(--cream);
+    padding:4px 12px;
+    border:3px solid var(--ink);
+    box-shadow:var(--paper-shadow-sm);
+    transform:rotate(-2deg);
+    display:inline-block;
+  }
+  .navlinks{display:flex;gap:22px;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+  .navlinks a{text-decoration:none;border-bottom:2px solid transparent;padding-bottom:2px;transition:.2s;}
+  .navlinks a:hover{border-bottom:2px solid var(--rust);color:var(--rust-dark);}
+  .nav-toggle{display:none;background:none;border:2px solid var(--ink);font-size:1.2rem;padding:4px 10px;cursor:pointer;}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    padding:70px 0 90px;
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.3fr 0.9fr;
+    gap:40px;
+    align-items:center;
+  }
+  .badge-stamp{
+    display:inline-block;
+    font-size:0.75rem;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    background:var(--mustard);
+    border:3px solid var(--ink);
+    padding:6px 14px;
+    transform:rotate(-3deg);
+    box-shadow:var(--paper-shadow-sm);
+    margin-bottom:22px;
+  }
+  h1.name{
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    font-weight:900;
+    color:var(--rust);
+    -webkit-text-stroke:2px var(--ink);
+    text-stroke:2px var(--ink);
+  }
+  .tagline{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(1.1rem, 2.4vw, 1.6rem);
+    color:var(--teal-dark);
+    margin-top:14px;
+  }
+  .hero-copy{
+    margin-top:22px;
+    max-width:520px;
+    font-size:0.98rem;
+  }
+  .hero-ctas{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    font-family:'Space Mono',monospace;
+    font-weight:700;
+    text-decoration:none;
+    padding:12px 24px;
+    border:3px solid var(--ink);
+    box-shadow:var(--paper-shadow-sm);
+    background:var(--teal);
+    color:var(--cream);
+    transform:rotate(-1deg);
+    transition:transform .15s ease;
+    font-size:0.9rem;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+  }
+  .btn.secondary{background:var(--cream);color:var(--ink);}
+  .btn:hover{transform:rotate(0deg) translate(-2px,-2px);}
+
+  .photo-box{
+    border:3px solid var(--ink);
+    background:var(--cream-2);
+    box-shadow:var(--paper-shadow);
+    position:relative;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;
+    color:#7a6f5e;
+    font-size:0.85rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    padding:20px;
+    min-height:180px;
+  }
+  .photo-box .tape{
+    position:absolute;
+    width:70px;height:22px;
+    background:rgba(226,165,49,0.75);
+    border:1px solid rgba(33,26,20,0.2);
+    top:-12px;left:50%;
+    transform:translateX(-50%) rotate(-4deg);
+  }
+  .polaroid{
+    background:#fffdf8;
+    border:3px solid var(--ink);
+    box-shadow:var(--paper-shadow);
+    padding:16px 16px 46px;
+    transform:rotate(3deg);
+    max-width:300px;
+    margin:0 auto;
+    position:relative;
+  }
+  .polaroid .photo-box{min-height:230px;box-shadow:none;border-width:2px;}
+  .polaroid figcaption{
+    position:absolute;bottom:12px;left:0;right:0;
+    text-align:center;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:0.95rem;
+  }
+
+  section{padding:80px 0;position:relative;}
+  .section-label{
+    font-size:0.8rem;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--rust-dark);
+    margin-bottom:8px;
+  }
+  h2.section-title{
+    font-size:clamp(1.8rem,4vw,2.6rem);
+    font-weight:900;
+    margin-bottom:36px;
+    display:inline-block;
+    position:relative;
+  }
+  h2.section-title::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:-6px;
+    width:100%;height:10px;
+    background:var(--mustard);
+    z-index:-1;
+    transform:skewX(-8deg);
+  }
+
+  /* alternating textured section backgrounds */
+  .section-cream2{background:var(--cream-2);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);}
+  .section-teal{background:var(--teal-dark);color:var(--cream);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);}
+  .section-teal h2.section-title::after{background:var(--rust);}
+  .section-teal .section-label{color:var(--mustard);}
+
+  /* ---------- ABOUT / PIVOT ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:start;
+  }
+  .about-list{list-style:none;margin:24px 0 0;padding:0;}
+  .about-list li{
+    padding:10px 0 10px 32px;
+    border-bottom:1.5px dashed rgba(33,26,20,0.3);
+    position:relative;
+  }
+  .about-list li::before{
+    content:"✦";
+    position:absolute;left:0;top:10px;
+    color:var(--rust);
+  }
+
+  /* ---------- EXPERIENCE ---------- */
+  .exp-card{
+    background:var(--cream);
+    border:3px solid var(--ink);
+    box-shadow:var(--paper-shadow);
+    padding:34px;
+    margin-bottom:20px;
+  }
+  .exp-head{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    border-bottom:3px solid var(--ink);
+    padding-bottom:14px;margin-bottom:20px;
+  }
+  .exp-role{font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;}
+  .exp-company{color:var(--rust-dark);font-weight:700;}
+  .exp-dates{
+    font-size:0.8rem;font-weight:700;
+    background:var(--mustard);
+    border:2px solid var(--ink);
+    padding:4px 10px;
+    align-self:flex-start;
+    transform:rotate(-2deg);
+  }
+  .stat-row{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:26px;
+  }
+  .stat{
+    text-align:center;
+    border:2px solid var(--ink);
+    padding:16px 8px;
+    background:var(--cream-2);
+    box-shadow:var(--paper-shadow-sm);
+  }
+  .stat .num{
+    font-family:'Fraunces',serif;
+    font-weight:900;
+    font-size:2.1rem;
+    color:var(--rust);
+    display:block;
+  }
+  .stat .lbl{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.5px;font-weight:700;}
+  .exp-card ul{margin:0;padding-left:20px;}
+  .exp-card li{margin-bottom:12px;}
+
+  /* ---------- SKILLS ---------- */
+  .skills-block{margin-bottom:34px;}
+  .skills-block h3{
+    font-size:1.1rem;
+    margin-bottom:14px;
+    color:var(--mustard);
+  }
+  .tag-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .tag{
+    border:2px solid var(--cream);
+    padding:6px 14px;
+    font-size:0.82rem;
+    font-weight:700;
+    transform:rotate(-1deg);
+  }
+  .tag.primary{background:var(--rust);color:var(--cream);border-color:var(--ink);}
+  .tag.secondary{background:transparent;color:var(--cream);}
+
+  /* ---------- FREELANCE ---------- */
+  .project-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:32px;
+  }
+  .project-card{
+    background:var(--cream);
+    border:3px solid var(--ink);
+    box-shadow:var(--paper-shadow);
+    padding:0 0 24px;
+    overflow:hidden;
+  }
+  .project-card .photo-box{
+    min-height:200px;
+    border:none;
+    border-bottom:3px solid var(--ink);
+    box-shadow:none;
+  }
+  .project-card .pc-body{padding:20px 22px 0;}
+  .project-card h3{font-family:'Fraunces',serif;font-size:1.2rem;margin-bottom:8px;}
+  .project-card p{font-size:0.88rem;margin:0 0 12px;}
+  .project-tags{display:flex;flex-wrap:wrap;gap:6px;padding:0 22px;}
+  .project-tags span{
+    font-size:0.7rem;font-weight:700;text-transform:uppercase;
+    background:var(--mustard);border:1.5px solid var(--ink);padding:3px 8px;
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+  .edu-card{
+    border:3px solid var(--ink);
+    background:var(--cream-2);
+    box-shadow:var(--paper-shadow-sm);
+    padding:26px;
+    position:relative;
+  }
+  .edu-card .stamp{
+    position:absolute;top:-14px;right:18px;
+    background:var(--teal);color:var(--cream);
+    border:2px solid var(--ink);
+    padding:5px 10px;font-size:0.7rem;font-weight:700;
+    transform:rotate(4deg);
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-wrap{
+    text-align:center;
+    padding:60px 0;
+  }
+  .contact-wrap h2{
+    font-size:clamp(2rem,5vw,3.2rem);
+    font-weight:900;
+    color:var(--rust);
+    -webkit-text-stroke:1.5px var(--ink);
+  }
+  .contact-links{
+    margin-top:34px;
+    display:flex;justify-content:center;gap:20px;flex-wrap:wrap;
+  }
+  footer{
+    text-align:center;
+    padding:26px 0;
+    font-size:0.75rem;
+    border-top:3px solid var(--ink);
+    background:var(--cream-2);
+  }
+
+  @media (max-width: 800px){
+    .navlinks{
+      display:none;
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--cream);
+      flex-direction:column;
+      border-bottom:3px solid var(--ink);
+      padding:18px 24px;
+      gap:16px;
+    }
+    .navlinks.open{display:flex;}
+    .nav-toggle{display:inline-block;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-grid .polaroid{order:-1;margin-bottom:10px;max-width:220px;}
+    .about-grid{grid-template-columns:1fr;}
+    .stat-row{grid-template-columns:1fr 1fr;}
+    .project-grid{grid-template-columns:1fr;}
+    .edu-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:480px){
+    .stat-row{grid-template-columns:1fr;}
+    h1.name{-webkit-text-stroke:1.4px var(--ink);}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">LT ✦</div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <div class="navlinks" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#freelance">Freelance</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="badge-stamp">Open to Technical Account Manager roles</span>
+      <h1 class="name">Leeya Thercy</h1>
+      <p class="tagline">I translate complicated systems into wins clients actually feel.</p>
+      <p class="hero-copy">
+        Systems Engineer turned relationship-builder. Two years owning an enterprise
+        SaaS platform for 4,500+ employees taught me that the hardest part of tech
+        isn't the code — it's making sure the humans on the other end of it succeed.
+        Now looking to bring that same platform ownership, training, and
+        problem-solving energy to a Technical Account Manager seat.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn" href="#experience">See the Impact →</a>
+        <a class="btn secondary" href="#contact">Let's Talk</a>
+      </div>
+    </div>
+    <div class="polaroid">
+      <div class="photo-box">+ Add Headshot Photo</div>
+      <figcaption>Leeya, probably mid-demo</figcaption>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="section-label">The Pivot</div>
+      <h2 class="section-title">From building the platform to being the person clients trust with it</h2>
+      <p>
+        I spent the last two years as the sole US-based engineer responsible for
+        Delta's enterprise workforce platform — which meant I wasn't just shipping
+        features. I was the escalation point, the trainer, the documentation writer,
+        and the calm voice on a 2am on-call page. That's the job of a Technical
+        Account Manager, I just had a different title for it.
+      </p>
+    </div>
+    <div>
+      <ul class="about-list">
+        <li><strong>Client-facing platform ownership</strong> — full lifecycle support for 4,500+ end users, solo.</li>
+        <li><strong>Translator between engineering and the business</strong> — turning PL/SQL and architecture into decisions leadership can act on.</li>
+        <li><strong>Enablement &amp; training</strong> — ran recurring live training labs so users could self-serve with confidence.</li>
+        <li><strong>Reliability under pressure</strong> — 24x7 on-call, zero-disruption weekly deployments.</li>
+        <li><strong>Data-driven problem solving</strong> — automation that recovered cost and improved adoption metrics leadership cared about.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="section-cream2">
+  <div class="wrap">
+    <div class="section-label">Professional Experience</div>
+    <h2 class="section-title">Where the receipts are</h2>
+
+    <div class="exp-card">
+      <div class="exp-head">
+        <div>
+          <div class="exp-role">Systems Engineer — DevOps</div>
+          <div class="exp-company">Delta Air Lines · Atlanta, GA</div>
+        </div>
+        <div class="exp-dates">July 2024 – July 2026</div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat">
+          <span class="num">4,500+</span>
+          <span class="lbl">Users Supported Solo</span>
+        </div>
+        <div class="stat">
+          <span class="num">↑35%</span>
+          <span class="lbl">Mobile Adoption</span>
+        </div>
+        <div class="stat">
+          <span class="num">↓65%</span>
+          <span class="lbl">Delinquent Timesheets</span>
+        </div>
+      </div>
+
+      <ul>
+        <li>Sole US-based engineer owning the full lifecycle of enterprise workforce platforms serving 4,500+ employees — feature development, configuration, user support, and 24x7 on-call operations.</li>
+        <li>Redesigned role-based, responsive UI/UX for Delta's time tracking and project management applications, driving a ~35% increase in mobile usage and a ~65% drop in delinquent timesheets.</li>
+        <li>Built Python and PL/SQL automation that strengthened data governance and recovered ~400 unused software licenses monthly, directly cutting software spend.</li>
+        <li>Kept platform health steady around the clock, monitoring AWS EC2 and database performance to resolve issues before they reached end users.</li>
+        <li>Authored architecture documentation (ERIM, logical, deployment diagrams) and ran virtual training labs twice weekly so content managers and users could operate the platform with confidence.</li>
+        <li>Recognized by senior leadership for sustaining full delivery and operational excellence solo during team absences — no drop in output or platform availability.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="section-teal">
+  <div class="wrap">
+    <div class="section-label">What I Bring</div>
+    <h2 class="section-title">Skills that travel between engineering and the business</h2>
+
+    <div class="skills-block">
+      <h3>Client &amp; Business Facing</h3>
+      <div class="tag-row">
+        <span class="tag primary">Stakeholder Management</span>
+        <span class="tag primary">Technical Enablement &amp; Training</span>
+        <span class="tag primary">Cross-Functional Communication</span>
+        <span class="tag primary">Escalation &amp; Incident Ownership</span>
+        <span class="tag primary">Documentation &amp; Onboarding</span>
+        <span class="tag primary">Agile / Scrum</span>
+      </div>
+    </div>
+
+    <div class="skills-block">
+      <h3>Technical Foundation</h3>
+      <div class="tag-row">
+        <span class="tag secondary">AWS (EC2, CloudWatch)</span>
+        <span class="tag secondary">Oracle SQL / PL/SQL</span>
+        <span class="tag secondary">React &amp; JavaScript</span>
+        <span class="tag secondary">REST APIs</span>
+        <span class="tag secondary">Linux (RedHat)</span>
+        <span class="tag secondary">ServiceNow ITSM</span>
+        <span class="tag secondary">Amazon Q / GitHub Copilot</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="freelance">
+  <div class="wrap">
+    <div class="section-label">Freelance Work</div>
+    <h2 class="section-title">Web design, on the side</h2>
+    <p style="max-width:640px;margin-bottom:36px;">
+      Alongside my full-time role, I design and build websites for small
+      businesses and clients — a great excuse to keep my design instincts sharp.
+      Swap these placeholders with screenshots and details from your favorite projects.
+    </p>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="photo-box"><div class="tape"></div>+ Add Project Screenshot</div>
+        <div class="pc-body">
+          <h3>Project Name</h3>
+          <p>One or two sentences on the client, the problem, and what you delivered.</p>
+        </div>
+        <div class="project-tags"><span>Web Design</span><span>React</span><span>Branding</span></div>
+      </div>
+      <div class="project-card">
+        <div class="photo-box"><div class="tape"></div>+ Add Project Screenshot</div>
+        <div class="pc-body">
+          <h3>Project Name</h3>
+          <p>One or two sentences on the client, the problem, and what you delivered.</p>
+        </div>
+        <div class="project-tags"><span>Shopify</span><span>UI/UX</span></div>
+      </div>
+      <div class="project-card">
+        <div class="photo-box"><div class="tape"></div>+ Add Project Screenshot</div>
+        <div class="pc-body">
+          <h3>Project Name</h3>
+          <p>One or two sentences on the client, the problem, and what you delivered.</p>
+        </div>
+        <div class="project-tags"><span>Squarespace</span><span>SEO</span></div>
+      </div>
+      <div class="project-card">
+        <div class="photo-box"><div class="tape"></div>+ Add Project Screenshot</div>
+        <div class="pc-body">
+          <h3>Project Name</h3>
+          <p>One or two sentences on the client, the problem, and what you delivered.</p>
+        </div>
+        <div class="project-tags"><span>WordPress</span><span>Copywriting</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="section-cream2">
+  <div class="wrap">
+    <div class="section-label">Education &amp; Certifications</div>
+    <h2 class="section-title">Paper trail</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <span class="stamp">Aug 2020 – Dec 2023</span>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.2rem;margin-bottom:8px;">B.S. Computer Science, Minor in Business Administration</h3>
+        <p style="margin:0;font-size:0.9rem;">Mississippi State University, Bagley College of Engineering</p>
+      </div>
+      <div class="edu-card">
+        <span class="stamp">Valid Sept 2025 – Sept 2027</span>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.2rem;margin-bottom:8px;">AWS Certified Cloud Practitioner</h3>
+        <p style="margin:0;font-size:0.9rem;">Amazon Web Services</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section-teal">
+  <div class="wrap contact-wrap">
+    <div class="section-label">Get In Touch</div>
+    <h2>Let's build something together</h2>
+    <p style="max-width:520px;margin:18px auto 0;">
+      Open to Technical Account Manager roles and new freelance web design projects.
+      Reach out — I read every message.
+    </p>
+    <div class="contact-links">
+      <a class="btn" href="mailto:leeyathercy1@gmail.com">Email Me</a>
+      <a class="btn secondary" href="https://linkedin.com/in/leeyathercy" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn secondary" href="https://leeyat1.github.io/My-Portfolio/" target="_blank" rel="noopener">Old Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Atlanta, GA · Built with a little chaos and a lot of care · © <span id="year"></span> Leeya Thercy
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+</body>
+</html>
