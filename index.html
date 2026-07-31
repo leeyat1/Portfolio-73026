@@ -550,7 +550,7 @@
           <h3>Photography Portfolio</h3>
           <p>This client needed a way to display and promote their photography work. I delivered.</p>
         </div>
-        <div class="project-tags"><span>Web Design</span><span>React</span><span>Branding</span></div>
+        <div class="project-tags"><span id="visit-cb">Visit</span><span>Web Design</span><span>React</span><span>Branding</span></div>
       </div>
       <div class="project-card">
         <div class="photo-box"><div class="tape"></div><img src="images/wbh-site.png"></div>
@@ -558,7 +558,7 @@
           <h3>Beauty Service Provider Web App</h3>
           <p>One or two sentences on the client, the problem, and what you delivered.</p>
         </div>
-        <div class="project-tags"><span>Web Design</span><span>React</span> <span>Branding</span></div>
+        <div class="project-tags"><span id="visit-wbh">Visit</span><span>Web Design</span><span>React</span> <span>Branding</span></div>
       </div>
       <div class="project-card">
         <div class="photo-box"><div class="tape"></div><img src="images/chicken-img.png"></div>
@@ -566,7 +566,7 @@
           <h3>NaNum Chicken Factory</h3>
           <p>One or two sentences on the client, the problem, and what you delivered.</p>
         </div>
-        <div class="project-tags"><span>Visit</span></div>
+        <div class="project-tags"><span id="visit-chick">Visit</span></div>
       </div>
       <div class="project-card">
         <div class="photo-box"><div class="tape"></div><img src="images/cleaning-img.png"></div>
@@ -574,7 +574,7 @@
           <h3>Home Cleaning Website</h3>
           <p>Website to facilite small cleaning businesses.</p>
         </div>
-        <div class="project-tags"><span>Visit</span></div>
+        <div class="project-tags"><span id="visit-clean">Visit</span></div>
       </div>
     </div>
   </div>
@@ -641,6 +641,18 @@
       setTimeout(() => { emailBtn.textContent = original; }, 2500);
     });
   }
+
+  let visClean = document.getElementById("visit-clean")
+  let visChick = document.getElementById("visit-chick")
+  let visCb = document.getElementById("visit-cb")
+  let visWbh = document.getElementById("visit-wbh")
+
+  visClean.addEventListener('click', ()=>{window.open('https://leeyat1.github.io/homeCleanerSite/', '_blank');})
+  visChick.addEventListener('click', ()=>{window.open('https://leeyat1.github.io/NaNum-Chicken-Factory/', '_blank');})
+  visWbh.addEventListener('click', ()=>{window.open('https://worldbeautyhive.com', '_blank');})
+  visCb.addEventListener('click', ()=>{window.open('https://leeyat1.github.io/CandicePortfolio/', '_blank');})
+
+  
 </script>
 
 </body>
